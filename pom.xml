@@ -43,7 +43,7 @@
 <applicationName>CICD-Java</applicationName>
 <environment>Sandbox</environment>
 <workers>1</workers>
-<workerType>Medium</workerType>
+<workerType>Micro</workerType>
 <objectStoreV2>true</objectStoreV2>
 </cloudHubDeployment>
 </configuration>
