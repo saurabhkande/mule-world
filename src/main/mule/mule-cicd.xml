@@ -10,5 +10,13 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	<flow name="mule-cicdFlow" doc:id="bb963975-9c24-44e0-b536-1977f626fcce" >
 		<http:listener doc:name="Listener" doc:id="095333f9-a90b-48d7-8082-e4f53d8a6ca8" config-ref="HTTP_Listener_config" path="/hello-mule"/>
 		<set-payload value="Welcome to Mule World" doc:name="Set Payload" doc:id="c3fc85ce-3b6a-4601-8713-e14ce51be418" />
+		<ee:message >
+                   <ee:set-payload ><![CDATA[%dw 2.0
+                   output application/java
+                   ---
+                   {
+                 "Time": now() 
+                      }]]></ee:set-payload>
+             </ee:message>
 	</flow>
 </mule>
