@@ -18,21 +18,26 @@
 	</properties>
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-clean-plugin</artifactId>
-				<version>3.2.0</version>
-			</plugin>
-			<plugin>
-				<groupId>org.mule.tools.maven</groupId>
-				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
-				<extensions>true</extensions>
-	               <configuration>
-                       <cloudHubDeployment>
-                              <uri>https://anypoint.mulesoft.com</uri>
-                              <muleVersion>4.4.0</muleVersion>
+<plugins>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-clean-plugin</artifactId>
+<version>3.2.0</version>
+<configuration>
+<source>1.8</source>
+<target>1.8</target>
+</configuration>
+</plugin>
+
+<plugin>
+<groupId>org.mule.tools.maven</groupId>
+<artifactId>mule-maven-plugin</artifactId>
+<version>${mule.maven.plugin.version}</version>
+<extensions>true</extensions>
+<configuration>
+<cloudHubDeployment>
+<uri>https://anypoint.mulesoft.com</uri>
+<muleVersion>4.4.0</muleVersion>
 <username>saurabhkande</username>
 <password>Ssk@12345</password>
 <applicationName>CICD-Java</applicationName>
@@ -42,9 +47,9 @@
 <objectStoreV2>true</objectStoreV2>
 </cloudHubDeployment>
 </configuration>
-			</plugin>
-		</plugins>
-	</build>
+</plugin>
+</plugins>
+</build>
 
 	<dependencies>
 		<dependency>
