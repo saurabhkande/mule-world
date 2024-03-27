@@ -1,21 +1,17 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
+Description: SAM template to create a Lambda function with Python 3 and API Gateway
 
 Resources:
-  MyLambdaFunction:
+  MyFunction:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: index.handler
-      Runtime: nodejs14.x
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.8
       CodeUri: ./
       Events:
         MyApi:
           Type: Api
           Properties:
-            Path: /myapi
+            Path: /myfunction
             Method: GET
-
-Outputs:
-  MyApi:
-    Description: "API Gateway endpoint URL for Prod stage"
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/myapi/"
